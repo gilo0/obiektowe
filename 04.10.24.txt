@@ -1,0 +1,78 @@
+class HelloWorld {
+    public static void main(String[] args) {
+
+        //zad1
+        String imienazwisko = "radoslaw matusiak";
+        System.out.println(imienazwisko);
+
+        //zad2
+        System.out.println(imienazwisko.length());
+
+        //zad3
+        String a = "Ala ";
+        String b = "Ma ";
+        String c = "Kota";
+        String polaczone = a.concat(b.concat(c));
+        System.out.println(polaczone);
+
+        //strzaleczka poniewaz trudne sie wylosowalo
+        System.out.println("                    *        ");
+        System.out.println("                    * *      ");
+        System.out.println("                    * * *    ");
+        System.out.println("* * * * * * * * * * * * * *  ");
+        System.out.println("* * * * * * * * * * * * * * *");
+        System.out.println("* * * * * * * * * * * * * *  ");
+        System.out.println("                    * * *    ");
+        System.out.println("                    * *      ");
+        System.out.println("                    *        ");
+        System.out.print("\n");
+
+        //zad5
+        System.out.println(polaczone.replace('a', 'e'));
+
+        //zad6
+        System.out.println(polaczone.toUpperCase());
+        System.out.println(polaczone.toLowerCase());
+
+        //zad7
+        System.out.println((int)'A');
+        System.out.println((int)'!');
+        System.out.println((int)'@');
+        System.out.println((int)'>');
+        System.out.println((int)'~');
+        System.out.println((int)'\n');
+        System.out.println((int)'\b');
+
+        //zad8
+        //cyfry 48-57, duze litery 65-90, male litery 97-122
+
+        //zad9
+        String grzesiu = "Grzesiek nie wiedzial dlaczego P jest tak drapieznym N mimo, ze jego M na to nie wskazuje";
+        grzesiu = grzesiu.replace("P", "student");
+        grzesiu = grzesiu.replace("N", "stworzeniem");
+        grzesiu = grzesiu.replace("M", "poziom alkoholu we krwi");
+        System.out.println(grzesiu);
+
+        //zad10
+        String ksiazka = " to najlepsza gra wydana przez ";
+        System.out.println("Baldur's Gate 3"+ksiazka+"Larian Studios");
+
+        //zad11
+        for(int i = 0; i < 5; i++)
+        {
+            System.out.print("wodrze");
+        }
+        System.out.println(" ");
+
+        //zad12
+
+        //zad13
+        System.out.println((char)54);
+        System.out.println((char)103);
+        System.out.println((char)241);
+        System.out.println((char)67);
+        System.out.println((char)9999);
+        System.out.println((char)imienazwisko.length());
+        System.out.println((char)174705);
+    }
+}
