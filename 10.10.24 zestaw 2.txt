@@ -59,5 +59,6 @@ class Zestaw2{
         System.out.println((Math.pow(x, 45)));
         System.out.println((byte)x + (byte)59);
         System.out.println((int)((byte)x-5));
+		sc.close();
     }
 }
