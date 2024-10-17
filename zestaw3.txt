@@ -1,0 +1,99 @@
+import java.io.BufferedReader;
+import java.util.Scanner;
+
+class Zestaw3{
+
+    //zad7
+    static int silnia(int n){
+        int wynik = 1;
+        for(int i = n; i > 1; i--)
+        {
+            wynik = wynik * i;
+        }
+        return wynik;
+    }
+
+    //zad8
+    static int silniaPodwojna(int n){
+        int wynik = 1;
+        for(int i = n; i > 1; i = i - 2)
+        {
+            wynik = wynik * i;
+        }
+        return wynik;
+    }
+    
+    //zad9
+    static int silnia(int n, int m){
+        int wynik = 1;
+        for(int i = n; i > 1; i = i - m)
+        {
+            wynik = wynik * i;
+        }
+        return wynik;
+    }
+
+    //zad17
+    static boolean czyPierwsza(int n){
+
+        if (n <= 1)
+        {
+            return false;
+        }  
+        for(int i = 2; i < n; i++)
+        {
+            if(n % i == 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    //zad18
+    static int NWD(int n, int m){
+        int najmniejsza;
+        int dzielnik = 1;
+        if(n<m){
+            najmniejsza = n;
+        }
+        else{
+            najmniejsza = m;
+        }
+        for(int i = 1; i <= najmniejsza; i++)
+        {
+            if(n % i == 0 && m % i == 0)
+            {
+                dzielnik = i;
+            }
+        }
+        return dzielnik;
+    }
+
+    //zad19
+    public static int[] wczytajTablice(int n){
+        Scanner sc = new Scanner(System.in);
+        int[] Array = new int [n];
+        System.out.print("Insert elements of a " + n + "-element array: ");
+        for(int i = 0; i < n; i++)
+        {
+            Array[i] = sc.nextInt();
+        }
+        sc.close();
+        return Array;
+    }
+
+    public static void main(String[] args){
+        System.out.println("Wynik zadania 7: "+silnia(8));
+        System.out.println("Wynik zadania 8: "+silniaPodwojna(8));
+        System.out.println("Wynik zadania 9: "+silnia(8, 2));
+        System.out.println("Wynik zadania 17: "+czyPierwsza(7));
+        System.out.println("Wynik zadania 18: "+NWD(11,22));
+        int[] Array = wczytajTablice(5);
+        for(int i = 0; i < 5; i++)
+        {
+            System.out.print(Array[i]+" ");
+        }
+    }
+
+}
