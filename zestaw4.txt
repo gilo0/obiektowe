@@ -1,0 +1,223 @@
+public class zestaw4 {
+
+
+    //zad1
+    public static int[] generujTablice(int n, int minWartosc, int maxWartosc) {
+        int[] Array = new int[n];
+        for(int i = 0; i < n; i++){
+            Array[i] = (int) (Math.random()*(maxWartosc-minWartosc)+minWartosc);
+        }
+        return Array;
+    }
+
+
+    //zad2
+    public static void wypiszTablice(int[][] tab, int n, int m){
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                try {
+                    System.out.print(tab[i][j] + " ");
+                }
+                catch (Exception e){
+                    System.out.print("  ");
+                }
+            }
+            System.out.print("\n");
+        }
+    }
+
+
+    //zad3
+    public static int ileNieparzystych(int[] tab){
+        int wynik = 0;
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] % 2 != 0)
+            {
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileParzystych(int[] tab){
+        int wynik = 0;
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] % 2 == 0)
+            {
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileDodatnich(int[] tab){
+        int wynik = 0;
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] > 0)
+            {
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileUjemnych(int[] tab){
+        int wynik = 0;
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] < 0)
+            {
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileZerowych(int[] tab){
+        int wynik = 0;
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] == 0)
+            {
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileMaxymalnych(int[] tab){
+        int wynik = 0;
+        int najwieksza = tab[0];
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] > najwieksza){
+                najwieksza = tab[i];
+            }
+        }
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] == najwieksza){
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileMinimalnych(int[] tab){
+        int wynik = 0;
+        int najmniejsza = tab[0];
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] < najmniejsza){
+                najmniejsza = tab[i];
+            }
+        }
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] == najmniejsza){
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileUnikalnych(int[] tab){
+        int wynik = 0;
+        int temp = 0;
+        for(int i = 0; i < tab.length; i++){
+            for(int j = 0; j < tab.length; j++){
+                if(tab[i] == tab[j]){
+                    temp++;
+                }
+            }
+            if(temp == 1)
+            {
+                wynik++;
+            }
+            temp = 0;
+        }
+        return wynik;
+    }
+
+
+    //zad4
+    public static int sumaDodatnich(int[] tab){
+        int wynik = 0;
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] > 0){
+                wynik += tab[i];
+            }
+        }
+        return wynik;
+    }
+
+    public static int sumaUjemnych(int[] tab){
+        int wynik = 0;
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] < 0){
+                wynik += tab[i];
+            }
+        }
+        return wynik;
+    }
+
+    public static int sumaOdwrotnosci(int[] tab){
+        int temp = 0;
+        for(int i = 0; i < tab.length; i++){
+            temp += tab[i];
+        }
+        return 1/temp;
+    }
+
+    public static double sredniaArytmetyczna(int[] tab){
+        double temp = 0;
+        for(int i = 0; i < tab.length; i++){
+            temp += tab[i];
+        }
+        return temp / tab.length;
+    }
+
+    public static double sredniaGeometryczna(int[] tab){
+        double temp = 1;
+        for(int i = 0; i < tab.length; i++){
+            temp *= tab[i];
+        }
+        return (double)Math.round(Math.pow(temp, ((double) 1 /tab.length)) * 100) /100;
+    }
+
+    public static double sredniaHarmoniczna(int[] tab){
+        double temp = 0;
+        for(int i = 0; i < tab.length; i++){
+            temp += (double) 1 /tab[i];
+        }
+        return (double)Math.round(tab.length/temp * 100) /100;
+    }
+
+
+    //zad5
+    public static int[] funkcjaLiniowa(int[] tab, int a, int b){
+        int[] Array = new int[tab.length];
+        for(int i = 0; i < tab.length; i++){
+            int x = tab[i];
+            Array[i] = a * x + b;
+        }
+        return Array;
+    }
+
+    public static int[] funkcjaKwadratowa(int[] tab, int a, int b, int c){
+        int[] Array = new int[tab.length];
+        for(int i = 0; i < tab.length; i++){
+            int x = tab[i];
+            Array[i] = a * x ^ 2 + b * x + c;
+        }
+        return Array;
+    }
+
+
+    public static void main(String[] args) {
+        int[] Array = generujTablice(5, 1, 10);
+        int[] temparray = {2,2,5,7};
+        for(int i = 0; i < Array.length; i++){
+            System.out.print(Array[i] + " ");
+        }
+        System.out.print("\n");
+        System.out.println(ileDodatnich(Array));
+        System.out.println(sredniaGeometryczna(temparray));
+        int[][] Matrix = {{1, 2, 3},{4, 5, 6},{7, 8, 9}};
+        wypiszTablice(Matrix, 3, 3);
+    }
+}
